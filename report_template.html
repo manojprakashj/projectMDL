@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linux Misconfiguration Report - {{ timestamp }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        h1, h2 { color: #2F4F4F; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        table, th, td { border: 1px solid #ddd; }
+        th, td { padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .severity-High { color: red; }
+        .severity-Medium { color: orange; }
+        .severity-Low { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Linux Misconfiguration Report</h1>
+    <h2>Generated on {{ timestamp }}</h2>
+    <h2>Summary</h2>
+    <img src="{{ graph_filename }}" alt="Findings by Category" width="600"/>
+    <h2>Detailed Findings</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Finding</th>
+                <th>Severity</th>
+                <th>Recommendation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for finding in findings %}
+            <tr>
+                <td>{{ finding['Category'] }}</td>
+                <td>{{ finding['Finding'] }}</td>
+                <td class="severity-{{ finding['Severity'] }}">{{ finding['Severity'] }}</td>
+                <td>{{ finding['Recommendation'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
