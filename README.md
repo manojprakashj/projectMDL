@@ -2,10 +2,6 @@
 
 ## Overview
 
-
-![fd15f324-25f7-44c8-b04c-06204b308100](https://github.com/user-attachments/assets/d1df3c73-7a70-4d48-8ecd-c2ac45994bf2)
-
-
 The **Linux Misconfiguration Detection and Reporting Tool** is a Python-based application designed to enhance the security posture of Linux systems. It identifies common misconfigurations in SSH, FTP, and web server configurations, checks for outdated packages, and scans file permissions for potential vulnerabilities. This tool is intended for system administrators, security engineers, and DevOps professionals to efficiently secure Linux environments.
 
 By analyzing configurations and generating detailed, actionable reports in HTML and PDF formats, the tool simplifies the process of identifying and mitigating risks in server setups.
